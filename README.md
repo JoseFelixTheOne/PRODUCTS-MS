@@ -1,5 +1,5 @@
 # Microservicio de Productos (Go + Gin + GORM + SQL Server)
-git clone https://github.com/yourname/products-ms.git
+git clone https://github.com/JoseFelixTheOne/PRODUCTS-MS.git
 cd products-ms
 cp .env.example .env
 # Edita .env con tus credenciales
@@ -15,15 +15,15 @@ go mod tidy
 
 # Correr servidor
 go run ./cmd/server
-```
+
 
 
 ## Endpoints
 
 
-- `GET /health` → estado
-- `GET /api/v1/categories` → lista de categorías
-- `GET /api/v1/products` → lista paginada de productos
+- GET /health → estado
+- GET /api/v1/categories → lista de categorías
+- GET /api/v1/products → lista paginada de productos
 
 
 ### Query params de `/api/v1/products`
@@ -44,36 +44,11 @@ go run ./cmd/server
 ### Ejemplos
 
 
-```
+
 GET /api/v1/products?page=1&page_size=10&sort=price&order=desc
 GET /api/v1/products?q=bluetooth&in_stock=true
 GET /api/v1/products?category_id=2&min_price=20&max_price=60
-```
 
-
-## Respuesta JSON (ejemplo)
-```json
-{
-"items": [
-{
-"id": 1,
-"sku": "ELEC-001",
-"name": "Audífonos Bluetooth",
-"price": 99.9,
-"stock": 50,
-"active": true,
-"category_id": 1,
-"category": {"id":1, "name":"Electrónica", "slug":"electronica"}
-}
-],
-"page": 1,
-"page_size": 10,
-"total_items": 100,
-"total_pages": 10,
-"has_next": true,
-"has_prev": false
-}
-```
 
 
 ## Notas
