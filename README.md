@@ -1,8 +1,9 @@
 # Microservicio de Productos (Go + Gin + GORM + SQL Server)
 git clone https://github.com/JoseFelixTheOne/PRODUCTS-MS.git
+
 cd products-ms
-cp .env.example .env
-# Edita .env con tus credenciales
+
+Cambia tus credenciales en el .env
 
 
 # Instalar dependencias
