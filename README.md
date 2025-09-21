@@ -9,11 +9,11 @@ cp .env.example .env
 go mod tidy
 
 
-# Ejecutar migraciones manuales (SQL Server Management Studio o sqlcmd)
-# migrations/001_init.sql
+### Ejecutar migraciones manuales (SQL Server Management Studio o sqlcmd)
+### migrations/001_init.sql
 
 
-# Correr servidor
+## Correr servidor
 go run ./cmd/server
 
 
@@ -49,9 +49,10 @@ GET /api/v1/products?page=1&page_size=10&sort=price&order=desc
 GET /api/v1/products?q=bluetooth&in_stock=true
 GET /api/v1/products?category_id=2&min_price=20&max_price=60
 
+###⚠️ Nota importante sobre SQL Server
 
-
-## Notas
-- El repo usa **GORM** con el driver `sqlserver`. Alternativamente puedes escribir repos `database/sql` con `OFFSET ... FETCH NEXT` si prefieres SQL puro.
-- Si quieres exponer **HATEOAS** o links de páginas siguientes/previas, agrega helpers en `pkg/pagination`.
-- Para entornos productivos, añade logs estructurados, métricas y validaciones adicionales.
+Para que el microservicio pueda conectarse a SQL Server asegúrate de:
+Habilitar el protocolo TCP/IP en SQL Server Configuration Manager.
+Configurar el puerto estático 1433 en la pestaña IPAll.
+Reiniciar el servicio de SQL Server.
+Sin esto, el DSN configurado en .env no funcionará y obtendrás errores de conexión.
