@@ -1,0 +1,30 @@
+# Archivos de caché y binarios de Go
+.DS_Store
+*.exe
+*.dll
+*.so
+*.dylib
+*.o
+*.out
+go-build/
+go-test-cache/
+
+# Dependencias del módulo de Go
+# No se deben ignorar go.mod y go.sum ya que son esenciales
+# para la gestión de dependencias.
+# Pero sí el cache de dependencias.
+vendor/
+
+# Archivos de entorno y configuraciones sensibles
+.env
+.env.*
+config.local.json
+*.env.local
+
+# IDEs y editores (Visual Studio Code)
+.vscode/
+
+# Logs y otros archivos temporales
+*.log
+tmp/
+temp/
